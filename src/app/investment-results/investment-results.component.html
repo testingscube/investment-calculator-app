@@ -1,23 +1,24 @@
-<body>
-  <table [hidden]="hasInvestmentReport">
-    <thead>
-      <tr>
-        <th>Year</th>
-        <th>Investment Value</th>
-        <th>Interest (Year)</th>
-        <th>Total Interest</th>
-        <th>Invested Capital</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let investmentResult of investmentResults">
-        <td>{{ investmentResult.investmentYear }}</td>
-        <td>{{ investmentResult.investmentValue }}</td>
-        <td>{{ investmentResult.interestPerYear }}</td>
-        <td>{{ investmentResult.totalInterest }}</td>
-        <td>{{ investmentResult.investedCapital }}</td>
-      </tr>
-    </tbody>
-  </table>
-<body>
-<!-- <app-investment-result /> -->
+<table *ngIf="hasInvestmentReport; else fallback">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let investmentResult of investmentResults">
+      <td>{{ investmentResult.investmentYear }}</td>
+      <td>{{ investmentResult.investmentValue | currency }}</td>
+      <td>{{ investmentResult.interestPerYear | currency }}</td>
+      <td>{{ investmentResult.totalInterest | currency }}</td>
+      <td>{{ investmentResult.investedCapital | currency }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #fallback>
+  <p>Enter Input And Press Calcualte Button!</p>
+</ng-template>

@@ -11,14 +11,14 @@ import { type UserInput } from './user-input.model';
 })
 export class UserInputComponent {
   userInput: UserInput = {
-    initialAmount: 0,
-    duration: 0,
-    annualInvestment: 0,
-    expectedReturn: 0,
+    initialAmount: 1000,
+    duration: 10,
+    annualInvestment: 100,
+    expectedReturn: 7.1,
   };
   @Output() generateReport = new EventEmitter<UserInput>();
   investmentCalculator() {
-    console.log("Button Pressed From User");
+    console.log('Button Pressed From User');
     this.generateReport.emit(this.userInput);
   }
 }

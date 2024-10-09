@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { type UserInput } from '../user-input/user-input.model';
-import { type InvestmentResult } from './investment-result/investment-result.model';
+import { type InvestmentResult } from './investment-result.model';
 
 @Injectable({ providedIn: 'root' })
 export class InvestmentResultService {
