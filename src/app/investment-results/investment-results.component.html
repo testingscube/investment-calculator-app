@@ -1,0 +1,23 @@
+<body>
+  <table [hidden]="hasInvestmentReport">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Investment Value</th>
+        <th>Interest (Year)</th>
+        <th>Total Interest</th>
+        <th>Invested Capital</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let investmentResult of investmentResults">
+        <td>{{ investmentResult.investmentYear }}</td>
+        <td>{{ investmentResult.investmentValue }}</td>
+        <td>{{ investmentResult.interestPerYear }}</td>
+        <td>{{ investmentResult.totalInterest }}</td>
+        <td>{{ investmentResult.investedCapital }}</td>
+      </tr>
+    </tbody>
+  </table>
+<body>
+<!-- <app-investment-result /> -->

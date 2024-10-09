@@ -1,3 +1,10 @@
-<app-header/>
-<app-user-input/>
-<app-investment-results/>
+<app-header />
+<app-user-input (generateReport)="onGenerateReport($event)" />
+<app-investment-results
+  *ngIf="isReportGenerated; else fallback"
+  [investmentResults]="investmentResults"
+/>
+
+<ng-template #fallback>
+    <p>Enter Details To Generate Investment Schedule!</p>
+</ng-template>
